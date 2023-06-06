@@ -85,11 +85,11 @@ const Header = props => {
   }, throttleMs))
 
 return (
-  <header id="header" style={{ zIndex: 1, height: '330px'}} className="w-full h-screen relative">
+  <header id="header" style={{ zIndex: 1, height: '430px'}} className="w-full h-screen relative">
 
     <div
       id='header-cover'
-      style={{ backgroundImage: `url('${siteInfo.pageCover}')`, height: '300px' }}
+      style={{ backgroundImage: `url('${siteInfo.pageCover}')`, height: '400px' }}
       className={`header-cover bg-center w-full h-screen bg-cover ${CONFIG_HEXO.HOME_NAV_BACKGROUND_IMG_FIXED ? 'bg-fixed' : ''}`}
     />
 
