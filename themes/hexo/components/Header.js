@@ -85,43 +85,34 @@ const Header = props => {
   }, throttleMs))
 
 return (
-  <>
-    <header id="header" style={{ zIndex: 1 }} className="w-full h-500px relative">
-      <div className="text-white absolute bottom-0 flex flex-col h-full items-center justify-center w-full">
-        <div className="font-black text-4xl md:text-5xl shadow-text">{siteInfo?.title}</div>
-        <div className="mt-2 h-12 items-center text-center font-medium shadow-text text-lg">
-          <span id="typed" />
-        </div>
+  <header id="header" style={{ zIndex: 1, height: '500px' }} className="w-full h-screen relative">
+
+    <div
+      id='header-cover'
+      style={{ backgroundImage: `url('${siteInfo.pageCover}')`, height: '300px' }}
+      className={`header-cover bg-center w-full h-screen bg-cover ${CONFIG_HEXO.HOME_NAV_BACKGROUND_IMG_FIXED ? 'bg-fixed' : ''}`}
+    />
+
+    <div className="text-white absolute bottom-0 flex flex-col h-full items-center justify-center w-full">
+      <div className='font-black text-4xl md:text-5xl shadow-text'>{siteInfo?.title}</div>
+      <div className='mt-2 h-12 items-center text-center font-medium shadow-text text-lg'>
+        <span id='typed' />
       </div>
-      <div
-        id="header-cover"
-        style={{
-          backgroundImage: `url('${siteInfo.pageCover}')`,
-          backgroundSize: "cover",
-          height: "300px",
-        }}
-        className={`header-cover bg-center w-full h-screen bg-cover ${
-          CONFIG_HEXO.HOME_NAV_BACKGROUND_IMG_FIXED ? "bg-fixed" : ""
-        }`}
-      />
-    </header>
-  </>
+
+      {/* 首页导航插件 */}
+      {CONFIG_HEXO.HOME_NAV_BUTTONS && <NavButtonGroup {...props} />}
+
+    </div>
+
+    <div
+      onClick={() => { window.scrollTo({ top: wrapperTop, behavior: 'smooth' }) }}
+      className="cursor-pointer w-full text-center py-4 text-3xl absolute bottom-10 text-white"
+    >
+      <div className="opacity-70 animate-bounce text-xs">{locale.COMMON.START_READING}</div>
+      <i className='opacity-70 animate-bounce fas fa-angle-down' />
+    </div>
+  </header>
 );
-
-                {/* 首页导航插件 */}
-                {CONFIG_HEXO.HOME_NAV_BUTTONS && <NavButtonGroup {...props} />}
-
-            </div>
-
-            <div
-                onClick={() => { window.scrollTo({ top: wrapperTop, behavior: 'smooth' }) }}
-                className="cursor-pointer w-full text-center py-4 text-3xl absolute bottom-10 text-white"
-            >
-                <div className="opacity-70 animate-bounce text-xs">{locale.COMMON.START_READING}</div>
-                <i className='opacity-70 animate-bounce fas fa-angle-down' />
-            </div>
-        </header>
-  )
 }
 
 export default Header
