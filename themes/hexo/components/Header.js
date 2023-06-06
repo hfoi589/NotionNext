@@ -108,12 +108,6 @@ return (
   </>
 );
 
-    <div className="text-white absolute bottom-0 flex flex-col h-full items-center justify-center w-full">
-      <div className='font-black text-4xl md:text-5xl shadow-text'>{siteInfo?.title}</div>
-      <div className='mt-2 h-12 items-center text-center font-medium shadow-text text-lg'>
-        <span id='typed' />
-      </div>
-
                 {/* 首页导航插件 */}
                 {CONFIG_HEXO.HOME_NAV_BUTTONS && <NavButtonGroup {...props} />}
 
