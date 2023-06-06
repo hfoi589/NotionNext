@@ -85,7 +85,7 @@ const Header = props => {
   }, throttleMs))
 
   return (
-  <header id="header" style={{ zIndex: 1 }} className="w-full h-600px relative">
+  <header id="header" style={{ zIndex: 1 }} className="w-full h-1200px relative">
 
     <div
       id='header-cover'
