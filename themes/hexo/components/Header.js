@@ -89,7 +89,7 @@ return (
 
     <div
       id='header-cover'
-      style={{ backgroundImage: `url('${siteInfo.pageCover}')`, height: '300px' }}
+      style={{ backgroundImage: `url('${siteInfo.pageCover}')`, height: '400px' }}
       className={`header-cover bg-center w-full h-screen bg-cover ${CONFIG_HEXO.HOME_NAV_BACKGROUND_IMG_FIXED ? 'bg-fixed' : ''}`}
     />
 
